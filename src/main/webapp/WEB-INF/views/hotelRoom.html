@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>房间</title>
+</head>
+<body>
+<table border="1" cellspacing="0">
+    <tr>
+        <th>酒店名</th>
+        <th>房间号</th>
+    </tr>
+    <tr th:each="hotelRoom:${hotelRooms}">
+        <td th:utext="${hotelRoom.hotelName}"></td>
+        <td th:utext="${hotelRoom.roomNum}"></td>
+        <td>可预约</td>
+        <td><a th:href="@{/order/toorder(hotelName=${hotelRoom.hotelName},roomNum=${hotelRoom.roomNum})}">预约</a></td>
+    </tr>
+</table>
+
+</body>
+</html>

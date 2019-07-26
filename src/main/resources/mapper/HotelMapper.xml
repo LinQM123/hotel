@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.HotelDao">
+
+    <select id="getHotelAccount" resultType="int">
+        SELECT
+	      COUNT(hotel_id)
+        FROM
+	      hotel;
+    </select>
+
+    <select id="getAllHotel" resultType="Hotel">
+        SELECT
+	      *
+        FROM
+	      hotel
+        LIMIT
+            #{page},
+            4;
+    </select>
+
+    <select id="getHotel" resultType="Hotel">
+-- 存在sql注入。
+       SELECT
+	      *
+        FROM
+	      hotel
+        WHERE
+	      hotel_name
+	    LIKE
+	        concat('%',#{hotelName},'%');
+
+    </select>
+
+
+
+</mapper>

@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>Resort a Hotel Category Flat Bootstrap Responsive Website Template | Contact :: w3layouts</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Resort Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="../../static/css/flexslider.css" type="text/css" media="screen" property="" />
+
+<link rel="stylesheet" type="text/css" href="../../static/css/zoomslider.css" />
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css" />
+<link href="../../static/css/font-awesome.css" rel="stylesheet"/>
+<script type="text/javascript" src="../../static/js/modernizr-2.6.2.min.js"></script>
+<!--/web-fonts-->
+<link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet"/>
+<!--//web-fonts-->
+</head>
+<body>
+     <div th:utext="${addservice}"></div>
+
+	<div class="w3_breadcrumb" style="background:peachpuff">
+	<div class="breadcrumb-inner">	
+			<ul>
+				<li><a href="tables.html">返回</a> <i>/</i></li>
+				
+				<li>服务</li>
+			</ul>
+		</div>
+	</div>
+<!-- //breadcrumb -->
+			<!--/content-inner-section-->
+				  <div class="w3_content_agilleinfo_inner" style="opacity:0.8;">
+					    <div class="container">
+							<div class="inner-agile-w3l-part-head">
+					           <h2 class="w3l-inner-h-title" style="color:slategrey">请输入您所需要的服务</h2>
+							</div>
+									<div class="w3_mail_grids">
+										<form action="/user/success" method="post">
+											<div class="col-md-6 w3_agile_mail_grid">
+													<input type="text" placeholder="您所在的酒店名"  name="hotelName" />
+													<input type="text" placeholder="您所在酒店的房间号" name="roomNum"/>
+													<input type="text" placeholder="您的联系电话" name="phone"/>
+											</div>
+											<div class="col-md-6 w3_agile_mail_grid">
+												<textarea name="serviceName" placeholder="需要什么服务？" ></textarea>
+												<input type="submit" value="提交服务"/>
+											</div>
+
+										</form>
+							</div>
+					   </div>
+				  </div>
+
+			<div class="w3agile_footer_copy" style="background:peachpuff">
+				<p>©2019 .javaEE.1903班二阶段项目| 由五大神组设计 </p>
+			</div>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<script type="text/javascript" src="../../static/js/jquery-2.1.4.min.js"></script>
+	<!-- Dropdown-Menu-JavaScript -->
+			<script>
+				$(document).ready(function(){
+					$(".dropdown").hover(            
+						function() {
+							$('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+							$(this).toggleClass('open');        
+						},
+						function() {
+							$('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+							$(this).toggleClass('open');       
+						}
+					);
+				});
+			</script>
+		<!-- //Dropdown-Menu-JavaScript -->
+
+
+<script type="text/javascript" src="../../static/js/jquery.zoomslider.min.js"></script>
+		<!-- search-jQuery -->
+				<script src="../../static/js/main.js"></script>
+
+<!--/script-->
+	<script src="../../static/js/simplePlayer.js"></script>
+			<script>
+				$("document").ready(function() {
+					$("#video").simplePlayer();
+				});
+			</script>
+			<!-- flexSlider -->
+					<script  src="../../static/js/jquery.flexslider.js"></script>
+					<script type="text/javascript">
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+
+<script type="text/javascript" src="../../static/js/move-top.js"></script>
+<script type="text/javascript" src="../../static/js/easing.js"></script>
+
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+</script>
+ <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+<!--end-smooth-scrolling-->
+<!--js for bootstrap working-->
+	<script src="../../static/js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>

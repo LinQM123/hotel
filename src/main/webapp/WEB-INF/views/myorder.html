@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1 th:utext="${msg}"></h1>
+<a th:href="@{'/order/selectOrderByUserName?userName='+${userName}}">我的订单</a>
+<a th:href="@{'/selectall'}">房间管理</a>
+<table>
+    <tr>
+        <th colspan="4">我的订单</th>
+    </tr>
+    <tr>
+        <th>用户名</th>
+        <th>酒店名</th>
+        <th>房间号</th>
+        <th></th>
+    </tr>
+    <tr th:each="order:${orders}">
+        <td th:utext="${order.userName}"></td>
+        <td th:utext="${order.hotelName}"></td>
+        <td th:utext="${order.roomNum}"></td>
+        <td><a th:href="@{/order/deleteOrder(userName=${order.getUserName()},hotelName=${order.hotelName},roomNum=${order.getRoomNum()})}">取消订单</a></td>
+    </tr>
+</table>
+</body>
+</html>

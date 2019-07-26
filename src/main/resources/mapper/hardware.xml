@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.HardWareDao">
+    <select id="selectAll" resultType="com.qf.entity.HardWare">
+SELECT
+	*
+FROM
+	hardware
+
+    </select>
+	<update id="update" >
+UPDATE hardware
+SET `hardware_state` = #{hardwareState},
+	`hardware_name`=#{hardwareName}
+WHERE
+	`room_num` = #{roomNum};
+	</update>
+</mapper>

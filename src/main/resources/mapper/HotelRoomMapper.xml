@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.HotelRoomDao">
+
+    <select id="getHotelRooms" resultType="HotelRoom">
+        SELECT
+	      *
+        FROM
+	      hotelroom AS a
+        WHERE
+	      a.hotel_id = #{hotelId}
+	    AND
+	      a.room_flag=1;
+    </select>
+
+    <update id="setRoomFlag" >
+      UPDATE
+        hotelroom as a
+      set
+        a.room_flag=0
+      WHERE
+        a.room_num=#{roomNum}
+      and
+        a.hotel_name=#{hotelName};
+  </update>
+
+
+    <update id="setRoomFlag1" >
+      UPDATE
+        hotelroom as a
+      set
+        a.room_flag=1
+      WHERE
+        a.room_num=#{roomNum}
+      and
+        a.hotel_name=#{hotelName};
+  </update>
+
+</mapper>

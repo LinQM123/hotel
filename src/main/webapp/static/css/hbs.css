@@ -1,0 +1,15 @@
+.header1 {
+    text-align: center;
+    margin-top: 4em;
+}
+.header1 h1 {
+    font-size: 3em;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Arvo', serif;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    background: url(../images/1111.jpg) no-repeat 0px 0px;
+    background-size:cover;
+}

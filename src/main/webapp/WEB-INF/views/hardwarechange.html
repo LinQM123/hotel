@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <title>房间表</title>
+  <!-- Bootstrap core CSS-->
+  <link href="../../static/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Custom fonts for this template-->
+  <link href="../../static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <!-- Page level plugin CSS-->
+  <link href="../../static/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"/>
+  <!-- Custom styles for this template-->
+  <link href="../../static/css/sb-admin.css" rel="stylesheet"/>
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" style="color: #e0a800" >智慧酒店</a>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="hardwaretables.html">
+            <i class="fa fa-fw fa-link"></i>
+            <span class="nav-link-text">返回</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-wrench"></i>
+            <span class="nav-link-text">房间智能管理</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseMulti">
+            <li>
+              <a href="hardware.html">查看房间状态</a>
+            </li>
+            <li>
+              <a href="hardwarechange.html">更改房间状态</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>退出登陆</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i>控制房间硬件</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <!-- 表单需要提交-->
+            <form action="/update" method="post">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>酒店名</th>
+                  <th>房间号</th>
+                  <th>空调温度</th>
+                  <th>灯光</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr >
+                  <td >
+                    <input type="text"  name="hotelName"/>
+                  </td>
+                  <td>
+                    <input type="text" name="roomNum"/>
+                  </td>
+                  <td>
+                    <input type="text" name="hardwareName"/>
+                  </td>
+                  <td>
+                    <input type="text" name="hardwareState"/>
+                  </td>
+                <td>
+                  <!--
+                  <a th:href="@{/hotelinfo(hotelName=${hotel.getHotelName()},roomNum=${hotel.getRoomNum()})}">预约</a>-->
+                  <input type= "submit" value="提交" />
+                </td>
+                </tr>
+              </tbody>
+            </table>
+            </form>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">更新与今天 11:59 PM</div>
+      </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>&copy; 2019 .javaEE.1903班二阶段项目 | 由五大神组设计</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">确定退出？</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">如果您确定要退出请点击下面“确定”按钮</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">返回</button>
+            <a class="btn btn-primary" href="login.html">确定</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="../../static/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../../static/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="../../static/js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="../../static/js/sb-admin-datatables.min.js"></script>
+  </div>
+</body>
+
+</html>

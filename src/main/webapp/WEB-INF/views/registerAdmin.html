@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>注册</title>
+    <link href="../../static/css/registstyle.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Temper Contact Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <link href="../../static/css/registstyle.css" rel="stylesheet"/>
+    <link href="../../static/css/font-awesome1.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="header">
+    <h1>管理员注册</h1>
+</div>
+<div class="main-content" style="opacity:0.7" >
+    <div class="contact-w3">
+        <div th:utext="${msg1}"></div>
+        <form action="/admin/insertAdmin" method="post">
+            <label>用户名</label>
+            <input type="text" name="adminName" placeholder="请输入要注册的用户名" required="required"/>
+            <div class="row">
+                <div class="contact-left-w3">
+                    <label>密码</label>
+                    <input type="text" name="password" placeholder="请输入要注册的密码" required="required"/>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+            <input type="submit" value="提交"/>
+        </form>
+    </div>
+</div>
+<div class="footer-w3-agile">
+    <p>©2019 .javaEE.1903班二阶段项目| 由五大神组设计 </p>
+</div>
+</body>
+</html>

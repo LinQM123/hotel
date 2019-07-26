@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<a th:href="@{'/hotel/getAllHotel?page=1'}">查看酒店</a>
+<a th:href="@{'/hotel/getAllHotel?page=1'}"  th:utext="${msg2}"></a>
+<a th:href="@{'/hotel/getAllHotel?page='+${pages}}" th:if="${page gt 1}" th:utext="${msg1}"></a>
+<a th:href="@{'/hotel/getAllHotel?page='+${pageb}}" th:if="${page lt pageAccount}" th:utext="${msg}"></a>
+<a th:href="@{'/hotel/getAllHotel?page='+${pageAccount}}" th:utext="${msg3}"></a>
+<table border="1" cellspacing="0">
+    <tr>
+        <th>酒店编号</th>
+        <th>酒店名字</th>
+        <th>酒店位置</th>
+        <th>酒店号码</th>
+        <th></th>
+    </tr>
+    <tr th:each="hotel:${List}">
+        <td th:utext="${hotel.hotelId}"></td>
+        <td th:utext="${hotel.hotelName}"></td>
+        <td th:utext="${hotel.hotelAddr}"></td>
+        <td th:utext="${hotel.hotelPhone}"></td>
+        <td ><a th:href="@{'/hotelRoom/getHotelRoom?hotelId='+${hotel.hotelId}}">查看</a></td>
+    </tr>
+</table>
+
+
+
+<form  action="/hotel/getHotel">
+    <input type="text"  name="hotelName"/>
+    <input type ="submit" value="查找酒店"/>
+</form>
+<table border="1" cellspacing="0">
+    <tr>
+        <th>酒店编号</th>
+        <th>酒店名字</th>
+        <th>酒店位置</th>
+        <th>酒店号码</th>
+        <th></th>
+    </tr>
+    <tr th:each="hotel:${hotels}">
+        <td th:utext="${hotel.hotelId}"></td>
+        <td th:utext="${hotel.hotelName}"></td>
+        <td th:utext="${hotel.hotelAddr}"></td>
+        <td th:utext="${hotel.hotelPhone}"></td>
+        <td th:href="@{'/hotelRoom/getHotelRoom?hotelId='+${hotel.hotelId}}">查看</td>
+    </tr>
+
+</table>
+</body>
+</html>

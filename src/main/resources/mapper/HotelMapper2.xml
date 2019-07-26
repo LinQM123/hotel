@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.HotelDao2">
+    <insert id="addHotel" parameterType="com.qf.entity.Hotel" useGeneratedKeys="true" keyProperty="id">
+INSERT INTO hotel(
+
+    hotel_name,
+    hotel_addr,
+    hotel_phone,
+    hotel_flag
+    )
+    values (
+
+    #{hotelName},
+    #{hotelAddr},
+    #{hotelPhone},
+    1
+
+    );
+    </insert>
+
+    <select id="selectAll" resultType="com.qf.entity.Hotel">
+        select
+        *
+        from
+        hotel
+    </select>
+
+    <select id="selectByName" resultType="com.qf.entity.Hotel">
+        select
+        *
+        from
+        hotel
+        where
+        hotel_name like concat('%' #{name},'%')
+    </select>
+
+
+</mapper>

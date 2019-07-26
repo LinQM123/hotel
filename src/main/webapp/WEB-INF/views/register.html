@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <div th:utext="${msg1}"></div>
+    <form action="/user/insertUser" method="post">
+        用户名：<input type="text" name="userName"/><br/>
+        密码：<input type="password" name="password"/><br/>
+        确认密码：<input type="password" /><br/>
+        性别：<input type="radio" name="gender" value="男"/>男
+            <input type="radio" name="gender" value="女"/>女<br/>
+        手机号码：<input type="text" name="phone"/><br/>
+        身份证：<input type="text" name="idCard"/><br/>
+        <!--身份：<input type="radio" name="user"/>用户-->
+        <input type="submit" value="提交"/>
+    </form>
+</body>
+</html>

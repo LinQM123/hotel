@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<title>登陆</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Trendy Flat Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!--font-awesome-css-->
+<link href="../../static/css/font-awesome.css" rel="stylesheet"/>
+<!--//font-awesome-css-->
+<!-- css files -->
+<link href="../../static/css/loginstyle.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- online-fonts -->
+<!--<link href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900iSlabo+27px&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet"/>-->
+</head>
+<body>
+<div th:utext="${msg1}"></div>
+<div class="agileheader">
+	<h1> </h1>
+</div>
+<section class="main-w3l">
+	<div class="w3layouts-main" style="opacity:0.8;">
+		<h2>用户登陆</h2>
+			<div class="w3ls-form" style="opacity:0.8;">
+				<form action="/user/checkUser" method="post">
+					<div class="email-w3ls">
+						<input type="text" name="userName" placeholder="用户名" required="" />
+						<span class="icon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+					</div>
+					<div class="w3ls-password">
+						<input type="password" name="password" placeholder="密码" required=""/>
+						<span class="icon3"><i class="fa fa-lock" aria-hidden="true"></i></span>
+					</div>	
+					<span><input type="checkbox" />记住我？</span>
+					<h6><a href="https://www.baidu.com/">忘记密码？</a></h6>
+						<div class="clear"></div>
+						<input type="submit" value="登陆" />
+				</form>
+			</div>	
+			<div class="w3ls-bottom">
+				<p>未注册 ?<a href="/user/register1">点击注册</a></p>
+			</div>	
+	</div>	
+</section>
+<div class="footer-w3l">
+	<p>&copy; 2019 .javaEE.1903班二阶段项目 </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.HardwareDao2">
+    <insert id="addHardware" parameterType="com.qf.entity.HardWare" useGeneratedKeys="true" keyProperty="id">
+INSERT INTO hardware(
+
+    hardware_name,
+    hardware_state,
+    hotel_name,
+    room_num,
+    hardware_flag
+    )
+    values (
+
+
+   #{hardwareName},
+   #{hardwareState},
+   #{hotelName},
+   #{roomNum},
+   0
+
+    );
+    </insert>
+
+    <select id="selectAll" resultType="com.qf.entity.Hotel">
+        select
+        *
+        from
+        hotel
+        where
+        `hotel_name` = #{hotelName};
+    </select>
+</mapper>

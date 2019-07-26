@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.ServiceDao">
+    <select id="selectAllService" resultType="com.qf.entity.HotelService">
+
+SELECT
+    a.service_id,
+	a.service_name,
+	a.room_num,
+	a.hotel_name,
+	a.service_flag
+
+
+FROM
+	hotelservice AS a
+
+
+
+    </select>
+    <insert id="addService" parameterType="com.qf.entity.HotelService" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO hotelservice (
+	hotel_name,
+	room_num,
+	phone,
+	service_name
+)
+VALUES
+	(
+		#{hotelName},
+		#{roomNum},
+		#{phone},
+		#{serviceName}
+	);
+	</insert>
+</mapper>
